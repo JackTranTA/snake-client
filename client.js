@@ -11,9 +11,14 @@ const connect = function () {
     conn.write("Name: TTA");
   });
 
+  // conn.on("connect", () =>  setInterval(() => {
+  //   conn.write("Move: up");
+  // }, 50));
+
   conn.on("data", (data) => {
     console.log(data);
   });
+  
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
