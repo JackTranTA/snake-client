@@ -32,6 +32,26 @@ const handleUserInput = function (key) {
   if (key === '\u0073') {
     connection.write("Move: down");
   }
+    
+  if (key === '\u0031') {
+    connection.write("Say: nom nom nom");
+  }
+ 
+  if (key === '\u0032') {
+    connection.write("Say: I am the longest snek");
+  }
+    
+  if (key === '\u0033') {
+    connection.write("Say: hisssss");
+  }
+   
+  if (key === '\u0034') {
+    connection.write("Say: traffic incoming, out of the way");
+  }
+     
+  if (key === '\u0035') {
+    connection.write("Say: git gud");
+  }
 };
 
 module.exports = { setupInput };
