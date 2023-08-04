@@ -1,3 +1,4 @@
+const { MOVE_LEFT_KEY, MOVE_RIGHT_KEY, MOVE_UP_KEY, MOVE_DOWN_KEY, TAUNTS } = require('./constants');
 // Stores the active TCP connection object.
 let connection;
 
@@ -17,41 +18,26 @@ const handleUserInput = function (key) {
     process.exit();
   }
 
-  if (key === '\u0061') {
+  if (key === MOVE_LEFT_KEY) {
     connection.write("Move: left");
   }
   
-  if (key === '\u0064') {
+  if (key === MOVE_RIGHT_KEY) {
     connection.write("Move: right");
   }
   
-  if (key === '\u0077') {
+  if (key === MOVE_UP_KEY) {
     connection.write("Move: up");
   }
   
-  if (key === '\u0073') {
+  if (key === MOVE_DOWN_KEY) {
     connection.write("Move: down");
   }
     
-  if (key === '\u0031') {
-    connection.write("Say: nom nom nom");
+  if (TAUNTS[key]) {
+    connection.write(TAUNTS[key]);
   }
- 
-  if (key === '\u0032') {
-    connection.write("Say: I am the longest snek");
-  }
-    
-  if (key === '\u0033') {
-    connection.write("Say: hisssss");
-  }
-   
-  if (key === '\u0034') {
-    connection.write("Say: traffic incoming, out of the way");
-  }
-     
-  if (key === '\u0035') {
-    connection.write("Say: git gud");
-  }
+
 };
 
 module.exports = { setupInput };
